@@ -1,0 +1,9 @@
+C:\Users\User\source\repos\Oncology.Api\Oncology.Core\bin\Release\netstandard2.1\Oncology.Core.deps.json
+C:\Users\User\source\repos\Oncology.Api\Oncology.Core\bin\Release\netstandard2.1\Oncology.Core.dll
+C:\Users\User\source\repos\Oncology.Api\Oncology.Core\bin\Release\netstandard2.1\Oncology.Core.pdb
+C:\Users\User\source\repos\Oncology.Api\Oncology.Core\obj\Release\netstandard2.1\Oncology.Core.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Oncology.Api\Oncology.Core\obj\Release\netstandard2.1\Oncology.Core.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Oncology.Api\Oncology.Core\obj\Release\netstandard2.1\Oncology.Core.AssemblyInfo.cs
+C:\Users\User\source\repos\Oncology.Api\Oncology.Core\obj\Release\netstandard2.1\Oncology.Core.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Oncology.Api\Oncology.Core\obj\Release\netstandard2.1\Oncology.Core.dll
+C:\Users\User\source\repos\Oncology.Api\Oncology.Core\obj\Release\netstandard2.1\Oncology.Core.pdb

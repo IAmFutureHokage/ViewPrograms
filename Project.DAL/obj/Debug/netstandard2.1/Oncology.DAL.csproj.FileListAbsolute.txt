@@ -1,0 +1,12 @@
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.DAL\bin\Debug\netstandard2.1\Oncology.DAL.deps.json
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.DAL\bin\Debug\netstandard2.1\Oncology.DAL.dll
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.DAL\bin\Debug\netstandard2.1\Oncology.DAL.pdb
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.DAL\bin\Debug\netstandard2.1\Oncology.Core.dll
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.DAL\bin\Debug\netstandard2.1\Oncology.Core.pdb
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.DAL\obj\Debug\netstandard2.1\Oncology.DAL.csproj.AssemblyReference.cache
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.DAL\obj\Debug\netstandard2.1\Oncology.DAL.AssemblyInfoInputs.cache
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.DAL\obj\Debug\netstandard2.1\Oncology.DAL.AssemblyInfo.cs
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.DAL\obj\Debug\netstandard2.1\Oncology.DAL.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.DAL\obj\Debug\netstandard2.1\Oncology.DAL.csproj.CopyComplete
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.DAL\obj\Debug\netstandard2.1\Oncology.DAL.dll
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.DAL\obj\Debug\netstandard2.1\Oncology.DAL.pdb

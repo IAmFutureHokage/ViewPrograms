@@ -1,0 +1,14 @@
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\bin\Debug\netstandard2.1\Oncology.BLL.deps.json
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\bin\Debug\netstandard2.1\Oncology.BLL.dll
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\bin\Debug\netstandard2.1\Oncology.BLL.pdb
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\bin\Debug\netstandard2.1\Oncology.Core.dll
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\bin\Debug\netstandard2.1\Oncology.DAL.dll
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\bin\Debug\netstandard2.1\Oncology.Core.pdb
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\bin\Debug\netstandard2.1\Oncology.DAL.pdb
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\obj\Debug\netstandard2.1\Oncology.BLL.csproj.AssemblyReference.cache
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\obj\Debug\netstandard2.1\Oncology.BLL.AssemblyInfoInputs.cache
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\obj\Debug\netstandard2.1\Oncology.BLL.AssemblyInfo.cs
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\obj\Debug\netstandard2.1\Oncology.BLL.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\obj\Debug\netstandard2.1\Oncology.BLL.csproj.CopyComplete
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\obj\Debug\netstandard2.1\Oncology.BLL.dll
+C:\Users\User\Source\Repos\Oncology.Api\Oncology.BLL\obj\Debug\netstandard2.1\Oncology.BLL.pdb
