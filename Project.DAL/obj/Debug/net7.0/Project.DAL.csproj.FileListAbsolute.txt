@@ -1,0 +1,15 @@
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\bin\Debug\net7.0\Project.DAL.deps.json
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\bin\Debug\net7.0\Project.DAL.dll
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\bin\Debug\net7.0\Project.DAL.pdb
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\bin\Debug\net7.0\Project.Core.dll
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\bin\Debug\net7.0\Project.Core.pdb
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\obj\Debug\net7.0\Project.DAL.csproj.AssemblyReference.cache
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\obj\Debug\net7.0\Project.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\obj\Debug\net7.0\Project.DAL.AssemblyInfoInputs.cache
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\obj\Debug\net7.0\Project.DAL.AssemblyInfo.cs
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\obj\Debug\net7.0\Project.DAL.csproj.CoreCompileInputs.cache
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\obj\Debug\net7.0\Project.DAL.csproj.CopyComplete
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\obj\Debug\net7.0\Project.DAL.dll
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\obj\Debug\net7.0\refint\Project.DAL.dll
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\obj\Debug\net7.0\Project.DAL.pdb
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.DAL\obj\Debug\net7.0\ref\Project.DAL.dll
