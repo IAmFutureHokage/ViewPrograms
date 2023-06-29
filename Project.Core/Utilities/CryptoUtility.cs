@@ -92,25 +92,18 @@ namespace Project.Core.Utilities
 
         public static Guid CreateCryptographicallySecureGuid()
         {
-            using (var provider = new RNGCryptoServiceProvider())
-            {
-                var bytes = new byte[16];
-                provider.GetBytes(bytes);
+            var bytes = new byte[16];
+            RandomNumberGenerator.Fill(bytes);
 
-                return new Guid(bytes);
-            }
+            return new Guid(bytes);
         }
 
 
 
         private static byte[] Generate128BitsOfRandomEntropy()
         {
-            var randomBytes = new byte[16]; // 32 Bytes will give us 256 bits.
-            using (var rngCsp = new RNGCryptoServiceProvider())
-            {
-                // Fill the array with cryptographically secure random bytes.
-                rngCsp.GetBytes(randomBytes);
-            }
+            var randomBytes = new byte[16]; 
+            RandomNumberGenerator.Fill(randomBytes);
             return randomBytes;
         }
     }

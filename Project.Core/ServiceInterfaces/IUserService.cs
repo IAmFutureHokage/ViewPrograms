@@ -1,4 +1,6 @@
-﻿using Project.Core.Entities;
+﻿using Microsoft.AspNetCore.Http;
+using Project.Core.Entities;
+using Project.Core.Models.Response;
 using System.Threading.Tasks;
 
 namespace Project.Core.OperationInterfaces
@@ -12,5 +14,8 @@ namespace Project.Core.OperationInterfaces
         void UpdateUser(User user);
         void UpdateUser(User user, string password);
         void Delete(User entity);
+        
+
+
     }
 }

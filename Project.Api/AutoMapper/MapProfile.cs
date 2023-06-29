@@ -27,6 +27,9 @@ namespace Project.Api
 
             CreateMap<User, DtoClaimUser>();
             CreateMap<DtoClaimUser, User>();
+
+            CreateMap<User, DtoAddUser>();
+            CreateMap<DtoAddUser, User>();
         }
        
 

@@ -1,8 +1,12 @@
-﻿using Project.Core.Entities;
+﻿using Microsoft.AspNetCore.Http;
+using Project.Core.Entities;
 using Project.Core.Enum;
 using Project.Core.Exceptions;
+using Project.Core.Models.Response;
 using Project.Core.OperationInterfaces;
 using Project.Core.RepositoryInterfaces;
+using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,12 +24,20 @@ namespace Project.BLL.Services
 
         public User Add(User user, string password)
         {
+            user.Id = Guid.NewGuid();
             var existingUser = GetByUserName(user.Login);
             if (existingUser != null)
                 throw new LogicException(ExceptionMessage.USER_ALREADY_EXISTS);
-            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(password);
+            else
+            {
+                existingUser = GetByUserMail(user.Mail);
+                if (existingUser != null)
+                    throw new LogicException(ExceptionMessage.USER_ALREADY_EXISTS);
+
+                user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(password);
 
             return Add(user);
+            }
         }
         public User GetByUserNameAuth(string userLogin)
         {
@@ -36,6 +48,12 @@ namespace Project.BLL.Services
         public User GetByUserName(string userLogin)
         {
             var user = _unitOfWork.Users.Find(x => x.Login == userLogin).FirstOrDefault();
+            return user;
+        }
+
+        public User GetByUserMail(string userMail)
+        {
+            var user = _unitOfWork.Users.Find(x => x.Mail == userMail).FirstOrDefault();
             return user;
         }
 
@@ -68,6 +86,8 @@ namespace Project.BLL.Services
             _unitOfWork.Users.Update(entity);
             _unitOfWork.Complete();
         }
+
+       
 
     }
 }

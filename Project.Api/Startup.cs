@@ -138,6 +138,9 @@ namespace Project.Api
             services.AddScoped<IUserService>(provider =>
                 new UserService(provider.GetService<IUnitOfWork>()));
 
+            services.AddScoped<IFileService>(provider =>
+                 new FileService(provider.GetService<IConfiguration>()));
+
 
 
         }

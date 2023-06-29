@@ -62,6 +62,10 @@ namespace Project.DAL.Repositories
         {
             return Context.Set<TEntity>().ToList();
         }
+        public IQueryable<TEntity> GetPage()
+        {
+            return Context.Set<TEntity>().AsQueryable();
+        }
 
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {

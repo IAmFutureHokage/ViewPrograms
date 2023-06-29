@@ -19,6 +19,9 @@ namespace Project.Core.OperationInterfaces
         Task<IEnumerable<TEntity>> GetAllAsync<TEntity>()
              where TEntity : class;
 
+        Task<IEnumerable<TEntity>> GetPageAsync<TEntity>(int pageNumber, int pageSize)
+            where TEntity : class;
+
         TEntity Add<TEntity>(TEntity entity)
             where TEntity : class;
 

@@ -39,6 +39,7 @@ namespace Project.Core.Helpers
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 return await Task.FromResult<ClaimsIdentity>(null);
             }
         }
@@ -64,6 +65,7 @@ namespace Project.Core.Helpers
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 return await Task.FromResult<ClaimsIdentity>(null);
             }
         }

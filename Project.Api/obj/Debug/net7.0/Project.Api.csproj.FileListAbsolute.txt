@@ -38,7 +38,6 @@ C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\NLog.Exten
 C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\NLog.Web.AspNetCore.dll
 C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\Npgsql.dll
 C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
-C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\BouncyCastle.Crypto.dll
 C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -74,3 +73,7 @@ C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\obj\Debug\net7.0\Project.Ap
 C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\obj\Debug\net7.0\ref\Project.Api.dll
 C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\doros\Desktop\Sanya\Project.Api\Project.Api\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll

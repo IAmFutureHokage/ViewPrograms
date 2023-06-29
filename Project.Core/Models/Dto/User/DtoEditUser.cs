@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using System;
 
 namespace Project.Core.Models.Dto.User
@@ -8,40 +9,19 @@ namespace Project.Core.Models.Dto.User
         [JsonProperty(PropertyName = "id")]
         public Guid Id { get; set; }
 
-        [JsonProperty(PropertyName = "login")]
-        public string Login { get; set; }
-
         [JsonProperty(PropertyName = "newPassword")]
         public string NewPassword { get; set; }
 
-        [JsonProperty(PropertyName = "lastName")]
-        public string LastName { get; set; }
-
         [JsonProperty(PropertyName = "firstName")]
-        public string FirstName { get; set; }
+        public string Firstname { get; set; }
 
-        [JsonProperty(PropertyName = "middleName")]
-        public string MiddleName { get; set; }
+        [JsonProperty(PropertyName = "lastName")]
+        public string Lastmame { get; set; }
 
-        [JsonProperty(PropertyName = "phone")]
-        public string Phone { get; set; }
+        [JsonProperty(PropertyName = "mail")]
+        public string Mail { get; set; }
 
-        [JsonProperty(PropertyName = "email")]
-        public string Email { get; set; }
-
-        [JsonProperty(PropertyName = "organizationId")]
-        public Guid OrganizationId { get; set; }
-
-        [JsonProperty(PropertyName = "notificationUpdateStatusDataIndicator")]
-        public Boolean NotificationUpdateStatusDataIndicator { get; set; }
-
-        [JsonProperty(PropertyName = "notificationUpdateValueDataIndicator")]
-        public Boolean NotificationUpdateValueDataIndicator { get; set; }
-
-        [JsonProperty(PropertyName = "notificationUpdateCommentDataIndicator")]
-        public Boolean NotificationUpdateCommentDataIndicator { get; set; }
-
-        [JsonProperty(PropertyName = "deleted")]
-        public Boolean Deleted { get; set; }
+        [JsonProperty(PropertyName = "aboume")]
+        public string Aboutme { get; set; }
     }
 }

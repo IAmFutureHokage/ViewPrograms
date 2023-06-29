@@ -20,20 +20,54 @@ namespace Project.Api.Controllers
     [Produces("application/json")]
     [Route("api/v{v:apiVersion}/user")]
     [ApiController, ApiVersion("1")]
-    [Authorize]
+ 
     public class UsersController : ControllerBase
     {
         private readonly IMapper _mapper;
         private readonly IUserService _userService;
         private readonly ILogger _logger;
+        private readonly IFileService _fileService;
 
-        public UsersController(IMapper mapper, IUserService userService, ILogger<UsersController> logger)
+        public UsersController(IMapper mapper, IUserService userService, ILogger<UsersController> logger, IFileService fileService)
         {
             _mapper = mapper;
             _userService = userService;
             _logger = logger;
+            _fileService = fileService;
+
         }
 
+        [HttpPost("add")]
+        public async Task<ResultRequest<DtoAddUser>> Add([FromBody] InboundRequest<DtoAddUser> request)
+        {
+            using (var transaction = _userService.BeginTransaction())
+            {
+                try
+                {
+                    var dto = request?.Data;
+                    if (dto == null)
+                    {
+                        await transaction.RollbackAsync();
+                        return ResultRequest<DtoAddUser>.Error("Adding element failed", "Invalid request data");
+                    }
+
+                    var user = _mapper.Map<User>(dto);
+
+                    var addedUser = _userService.Add(user, dto.NewPassword);
+                    var mappedUser = _mapper.Map<DtoAddUser>(addedUser);
+                    await transaction.CommitAsync();
+                    return ResultRequest<DtoAddUser>.Ok(mappedUser);
+                }
+                catch (Exception e)
+                {
+                    await transaction.RollbackAsync();
+                    _logger.LogError("Update element User error", e.ToString());
+                    return ResultRequest<DtoAddUser>.Error("Adding element error", e.Message);
+                }
+            }
+        }
+
+        [Authorize]
         [HttpPost("get/me")]
         public ResultRequest<DtoUser> GetMe([FromBody] InboundRequest request)
         {
@@ -54,6 +88,7 @@ namespace Project.Api.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("update-my-user")]
         public async Task<ResultRequest> UpdateMyUser([FromBody] InboundRequest<DtoEditMyUser> request)
         {
@@ -74,6 +109,20 @@ namespace Project.Api.Controllers
                         await transaction.RollbackAsync();
                         return ResultRequest.Error("Error", "Wrong User");
                     }
+                    var avatarFile = dto.AvatarFile;
+                    if (avatarFile != null)
+                    {
+                        try
+                        {
+                            dbUser.Avatar = await _fileService.SaveFile(avatarFile);
+                        }
+                        catch (Exception e)
+                        {
+                            await transaction.RollbackAsync();
+                            return ResultRequest.Error("Error", e.Message);
+                        }
+                    }
+
                     if (!String.IsNullOrEmpty(dto.NewPassword))
                     {
                         _userService.UpdateUser(dbUser, dto.NewPassword);
@@ -95,35 +144,37 @@ namespace Project.Api.Controllers
         }
 
         [HttpPost("get/{id}")]
-        public ResultRequest<DtoEditUser> Get(Guid id)
+        public ResultRequest<DtoUser> Get(Guid id)
         {
             try
             {
 
                 var user = _userService.Get<User>(id);
-                var dtoUser = _mapper.Map<DtoEditUser>(user);
-                return ResultRequest<DtoEditUser>.Ok(dtoUser);
+                var dtoUser = _mapper.Map<DtoUser>(user);
+                return ResultRequest<DtoUser>.Ok(dtoUser);
             }
             catch (Exception e)
             {
                 _logger.LogError("Get elements User error", e.ToString());
-                return ResultRequest<DtoEditUser>.Error("Error", e.ToString());
+                return ResultRequest<DtoUser>.Error("Error", e.ToString());
             }
         }
 
-        [HttpGet("get-all")]
-        public async Task<ResultRequest<List<DtoEditUser>>> GetAll()
+        [Authorize]
+        [HttpGet("get-page")]
+        public async Task<ResultRequest<List<DtoUser>>> GetAll(int pageNumber = 1, int pageSize = 10)
         {
             try
             {
-                return ResultRequest<List<DtoEditUser>>.Ok(_mapper.Map<List<DtoEditUser>>(await _userService.GetAllAsync<User>()));
+                return ResultRequest<List<DtoUser>>.Ok(_mapper.Map<List<DtoUser>>(await _userService.GetPageAsync<User>(pageNumber, pageSize)));
             }
             catch (Exception e)
             {
                 _logger.LogError("Get all elements User error", e.ToString());
-                return ResultRequest<List<DtoEditUser>>.Error("Get all elements user error", e.Message);
+                return ResultRequest<List<DtoUser>>.Error("Get all elements user error", e.Message);
             }
         }
+
         [Authorize(Roles = "admin")]
         [HttpPost("delete/{id}")]
         public async Task<ResultRequest> Delete(Guid id)
@@ -187,35 +238,6 @@ namespace Project.Api.Controllers
                 }
             }
         }
-        [Authorize(Roles = "admin")]
-        [HttpPost("add")]
-        public async Task<ResultRequest<DtoEditUser>> Add([FromBody] InboundRequest<DtoEditUser> request)
-        {
-            using (var transaction = _userService.BeginTransaction())
-            {
-                try
-                {
-                    var dto = request?.Data;
-                    if (dto == null)
-                    {
-                        await transaction.RollbackAsync();
-                        return ResultRequest<DtoEditUser>.Error("Adding element failed", "Invalid request data");
-                    }
-
-                    var user = _mapper.Map<User>(dto);
-
-                    var addedUser = _userService.Add(user, dto.NewPassword);
-                    var mappedUser = _mapper.Map<DtoEditUser>(addedUser);
-                    await transaction.CommitAsync();
-                    return ResultRequest<DtoEditUser>.Ok(mappedUser);
-                }
-                catch (Exception e)
-                {
-                    await transaction.RollbackAsync();
-                    _logger.LogError("Update element User error", e.ToString());
-                    return ResultRequest<DtoEditUser>.Error("Adding element error", e.Message);
-                }
-            }
-        }
+       
     }
 }
