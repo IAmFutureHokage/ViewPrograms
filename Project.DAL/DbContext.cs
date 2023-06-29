@@ -17,7 +17,10 @@ namespace Project.DAL
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.LogTo(System.Console.WriteLine);
+            optionsBuilder
+                .UseNpgsql(options => options.MigrationsAssembly("Project.Api"))
+                .LogTo(System.Console.WriteLine);
         }
     }
 }
+

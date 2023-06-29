@@ -3,8 +3,10 @@ using Project.Core.OperationInterfaces;
 using Project.Core.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Project.BLL.Services
 {
@@ -38,6 +40,16 @@ namespace Project.BLL.Services
            where TEntity : class
         {
             return await _unitOfWork.Repository<TEntity>().GetAllAsync();
+        }
+
+        public async Task<IEnumerable<TEntity>> GetPageAsync<TEntity>(int pageNumber, int pageSize)
+         where TEntity : class
+        {
+            return await _unitOfWork.Repository<TEntity>()
+                .GetPage()
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
         }
 
         public TEntity Add<TEntity>(TEntity entity)
